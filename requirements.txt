@@ -1,0 +1,48 @@
+# ─────────────────────────────────────────────────────────────
+# Requerimientos — Streamlit apps + FastAPI backend + Training
+# ─────────────────────────────────────────────────────────────
+# Instalar con:
+#   pip install -r requirements.txt
+#
+# Si tienes GPU NVIDIA, instala PyTorch con CUDA primero:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#   (reemplaza cu121 con tu versión: cu118, cu124, etc.)
+# Luego:
+#   pip install -r requirements.txt
+# ─────────────────────────────────────────────────────────────
+
+# ── Detección de objetos ──
+ultralytics>=8.2.0             # YOLOv8
+
+# ── Backend API ──
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9        # necesario para UploadFile / Form en FastAPI
+pydantic>=2.0.0                # modelos de respuesta (dependencia de FastAPI)
+
+# ── Variables de entorno ──
+python-dotenv>=1.0.0
+
+# ── Interfaz web ──
+streamlit>=1.35.0
+
+# ── Procesamiento de imágenes ──
+Pillow>=10.0.0
+opencv-python-headless>=4.9.0  # usado internamente por ultralytics
+
+# ── Datos / tablas ──
+numpy>=1.24.0
+pandas>=2.0.0                  # tablas comparativas en app.py y app2.py
+
+# ── Progreso en entrenamiento ──
+tqdm>=4.66.0                   # barra de progreso en train/train_models.py
+
+# ── Métricas de detección ──
+torchmetrics>=1.3.0            # mAP en train/train_models.py
+
+# ── Parsing YAML ──
+PyYAML>=6.0
+
+# ── PyTorch (CPU por defecto — ver nota arriba para GPU) ──
+torch>=2.1.0
+torchvision>=0.16.0
