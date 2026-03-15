@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['disc', 'hdisc']
+
+roboflow:
+  workspace: dataset-ocg5j
+  project: disc-herniation-in-lumbar-spine-nstgi
+  version: 4
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/dataset-ocg5j/disc-herniation-in-lumbar-spine-nstgi/dataset/4
